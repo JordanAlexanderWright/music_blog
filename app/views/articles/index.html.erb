@@ -1,7 +1,24 @@
 <h1>Articles Listing</h1>
 
-<% @articles.each do |article| %>
-<ul>
-  <a href="articles/ <%= article.id %>"><li><%= article.title %></li></a>
-</ul>
-<% end %>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @articles.each do |article| %>
+        <tr>
+          <td>
+            <a href="articles/ <%= article.id %>"><%= article.title %></a>
+          </td>
+          <td><%= article.description %></td>
+          <td>placeholder<td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
