@@ -17,7 +17,7 @@
           </td>
           <td><%= article.description %></td>
           <td><%= link_to 'Edit', edit_article_path(article) %><td>
-          <td><%= button_to 'Delete', article_path(article), method: :delete %><td>
+          <td><%= link_to 'Delete', article_path(article), data: { turb_method: :delete, turbo_confim: "Are you sure?"} %><td>
         </tr>
       <% end %>
     </tbody>
