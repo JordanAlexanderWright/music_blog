@@ -16,7 +16,7 @@
             <a href="articles/ <%= article.id %>"><%= article.title %></a>
           </td>
           <td><%= article.description %></td>
-          <td>placeholder<td>
+          <td><%= button_tog 'Delete', article_path(article), method: :delete %><td>
         </tr>
       <% end %>
     </tbody>
