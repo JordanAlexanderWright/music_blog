@@ -2,4 +2,10 @@
 <p><%= @article.description %></p>
 <p> <%= @article.body %></p>
 
-<p><a href="/articles/<%= @article.id %>/edit">Edit Article</a></p>
+
+<%= @article.description %>
+
+<br>
+    <%= link_to 'Articles Home', articles_path%> |
+    <%= link_to 'Edit', edit_article_path(@article) %> |
+    <%= link_to 'Delete', article_path(@article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
