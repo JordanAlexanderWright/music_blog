@@ -7,22 +7,26 @@
   </ul>
 <% end %>
 
-<%= form_with(model: @article, local: true) do |form| %>
+<div class="formWrapper my-10">
+  <%= form_with(model: @article, local: true) do |form| %>
 
-<%= form.label :title, "Title"%>
-<br>
-<%= form.text_field :title%>
-<br>
-<%= form.label :description, "Description"%>
-<br>
-<%= form.text_area :description%>
+  <div class="field mx-10">
+    <%= form.label :title, "Title"%>
+    <%= form.text_field :title, class: "block border border-grey-light w-80 p-3 rounded mb-4 "%>
+  </div>
 
-<br>
-<%= form.label :body, "Body"%>
-<br>
-<%= form.text_area :body%>
 
-<p>
-  <%= form.submit %>
-</p>
-<% end %>
+  <div class="field mx-10">
+    <%= form.label :description, "Description"%>
+    <%= form.text_area :description, class: "block border border-grey-light w-80 p-3 rounded mb-4"%>
+  </div>
+
+
+  <div class="field mx-10">
+    <%= form.label :body, "Body"%>
+    <%= form.text_area :body, class: "block border border-grey-light w-80 p-3 rounded mb-4"%>
+  </div>
+
+  <%= form.submit class: 'btn block border cursor-pointer mx-10'%> 
+  <% end %>
+</div>
