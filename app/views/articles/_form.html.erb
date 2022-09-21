@@ -1,0 +1,28 @@
+<% if @article.errors.any? %>
+  <h2>The following error(s) occurred:</h2>
+  <ul>
+    <% @article.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_with(model: @article, local: true) do |form| %>
+
+<%= form.label :title, "Title"%>
+<br>
+<%= form.text_field :title%>
+<br>
+<%= form.label :description, "Description"%>
+<br>
+<%= form.text_area :description%>
+
+<br>
+<%= form.label :body, "Body"%>
+<br>
+<%= form.text_area :body%>
+
+<p>
+  <%= form.submit %>
+</p>
+<% end %>
