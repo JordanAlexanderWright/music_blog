@@ -8,3 +8,32 @@
     <a href="#" class="mt-8 inline-flex w-full items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-indigo-600 hover:bg-indigo-50 sm:w-auto">Sign up now!</a>
   </div>
 </div>
+
+<div data-controller='clipboard' class='mx-10 my-5' data-clipboard-supported-class="clipboard--supported">
+    PIN: <input data-clipboard-target='source' type="text" value="1234" readonly>
+    <button data-action="clipboard#copy" class="clipboard-button">Copy to Clipboard</button>
+</div>
+
+<%# <div data-controller='clipboard' class='mx-10 my-5'>
+    PIN: <input data-clipboard-target='source' type="text" value="93820" readonly>
+    <button data-action="clipboard#copy">Copy to Clipboard</button>
+</div>
+
+<div data-controller="clipboard" class='mx-10 my-5'>
+  PIN: <textarea data-clipboard-target="source" readonly>3737</textarea>
+  <a href="#" data-action="clipboard#copy">Copy to Clipboard</a>
+</div> %>
+
+<div data-controller="slideshow" class='mx-10' data-slideshow-last-value='Wright' data-name='jordan' data-number='12345'>
+  <button data-action="slideshow#previous"> ← </button>
+  <button data-action="slideshow#next"> → </button>
+
+  <div data-slideshow-target="slide" >🐵</div>
+  <div data-slideshow-target="slide">🙈</div>
+  <div data-slideshow-target="slide">🙉</div>
+  <div data-slideshow-target="slide">🙊</div>
+</div>
+
+<div data-controller="content-loader"
+     data-content-loader-url-value="/messages.html"
+     class='mx-10'></div>
