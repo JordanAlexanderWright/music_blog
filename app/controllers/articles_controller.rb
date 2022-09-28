@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :set_user
 
   def index
     @articles = Article.all
@@ -19,6 +20,7 @@ class ArticlesController < ApplicationController
   
   def create
     @article = Article.new(article_params)
+    @article.user = User.first
     if @article.save
       flash[:notice] = "Article was saved correctly"
       redirect_to article_path(@article)
@@ -52,6 +54,10 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
+  def set_user 
+    @user = User.first
+  end
+  
   def article_params
     params.require(:article).permit(:title, :description, :body)
   end
