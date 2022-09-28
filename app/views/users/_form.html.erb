@@ -1,0 +1,31 @@
+<% if @user.errors.any? %>
+  <h2>The following error(s) occurred:</h2>
+  <ul>
+    <% @user.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<div class="formWrapper my-10">
+  <%= form_with(model: @user) do |form| %>
+
+  <div class="field mx-10">
+    <%= form.label :user_name, "User Name"%>
+    <%= form.text_field :user_name, class: "block border border-grey-light w-80 p-3 rounded mb-4 "%>
+  </div>
+
+
+  <div class="field mx-10">
+    <%= form.label :email, "Email"%>
+    <%= form.text_area :email, class: "block border border-grey-light w-80 p-3 rounded mb-4"%>
+  </div>
+
+
+  <div class="field mx-10">
+    <%= form.label :password, "Password"%>
+    <%= form.text_area :password, class: "block border border-grey-light w-80 p-3 rounded mb-4"%>  </div>
+
+  <%= form.submit class: 'btn block border cursor-pointer mx-10'%> 
+  <% end %>
+</div>
