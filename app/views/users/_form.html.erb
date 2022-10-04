@@ -1,13 +1,7 @@
-<% if @user.errors.any? %>
-  <h2>The following error(s) occurred:</h2>
-  <ul>
-    <% @user.errors.full_messages.each do |error| %>
-    <li><%= error %></li>
-    <% end %>
-  </ul>
-<% end %>
+
 
 <div class="formWrapper my-10">
+  <%= render 'errors' %>
   <%= form_with(model: @user) do |form| %>
 
   <div class="field mx-10">
@@ -24,8 +18,8 @@
 
   <div class="field mx-10">
     <%= form.label :password, "Password"%>
-    <%= form.text_area :password, class: "block border border-grey-light w-80 p-3 rounded mb-4"%>  </div>
+    <%= form.password_field :password, class: "block border border-grey-light w-80 p-3 rounded mb-4"%>  </div>
 
-  <%= form.submit class: 'btn block border cursor-pointer mx-10'%> 
+  <%= form.submit "Sign Up", class: 'btn block border cursor-pointer mx-10'%> 
   <% end %>
 </div>

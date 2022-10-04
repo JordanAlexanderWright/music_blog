@@ -1,0 +1,14 @@
+<h1>Errors</h1>
+
+<% if @user.errors.any? %>
+<div>
+<% p @user.errors.full_messages %>
+  <h2>The following error(s) occurred:</h2>
+  <ul>
+    <% @user.errors.full_messages.each do |error| %>
+    <% p error %>
+    <li><%= error %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
